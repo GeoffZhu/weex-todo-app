@@ -12,7 +12,7 @@ npm start
 
 #### Web
 
-[http://geoffzhu.cn/weex-todo-app/web/index.html] (http://geoffzhu.cn/weex-todo-app/web/index.html)
+[http://geoffzhu.cn/weex-todo-app/web/index.html](http://geoffzhu.cn/weex-todo-app/web/index.html)
 
 #### Native (Use weex playground)
 
