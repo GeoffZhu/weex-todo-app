@@ -20799,7 +20799,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.iconfont[data-v-b7308c76] {\n  font-family: iconfont;\n}\n.navbar[data-v-b7308c76] {\n  height: 88px;\n  background-color: #50e3a4;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n.navbar-title[data-v-b7308c76] {\n  color: #FFFFFF;\n  font-size: 32px;\n}\n.navbar-icon[data-v-b7308c76] {\n  color: #FFFFFF;\n  font-size: 36px;\n}\n", ""]);
+exports.push([module.i, "\n.iconfont[data-v-b7308c76] {\n  font-family: iconfont;\n}\n.navbar[data-v-b7308c76] {\n  height: 88px;\n  background-color: #50e3a4;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n.is-ios[data-v-b7308c76] {\n  height: 128px;\n  padding-top: 40px;\n}\n.navbar-title[data-v-b7308c76] {\n  color: #FFFFFF;\n  font-size: 32px;\n}\n.navbar-icon[data-v-b7308c76] {\n  color: #FFFFFF;\n  font-size: 36px;\n}\n", ""]);
 
 // exports
 
@@ -20828,6 +20828,12 @@ var navigator = weex.requireModule('navigator');
 
 exports.default = {
   name: 'navbar',
+  data: function data() {
+    return {
+      platform: weex.config.env.platform.toLowerCase()
+    };
+  },
+
   props: {
     showBack: {
       type: Boolean,
@@ -20862,6 +20868,7 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "navbar",
+    class: [_vm.platform === 'ios' ? 'is-ios' : ''],
     staticStyle: _vm.$processStyle(undefined),
     style: (_vm.$processStyle(undefined))
   }, [(_vm.showBack) ? _c('text', {

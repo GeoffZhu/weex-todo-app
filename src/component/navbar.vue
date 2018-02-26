@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" :class="[platform === 'ios' ? 'is-ios' : '']">
     <text v-if="showBack" class="iconfont navbar-icon" @click="onBack">&#xe8b5;</text>
     <text v-else class="navbar-title"></text>
     <text class="navbar-title">{{title}}</text>
@@ -12,6 +12,11 @@ const navigator = weex.requireModule('navigator')
 
 export default {
   name: 'navbar',
+  data () {
+    return {
+      platform: weex.config.env.platform.toLowerCase()
+    }
+  },
   props: {
     showBack: {
       type: Boolean,
@@ -51,6 +56,10 @@ export default {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+}
+.is-ios {
+  height: 128px;
+  padding-top: 40px; 
 }
 .navbar-title {
   color: #FFFFFF;

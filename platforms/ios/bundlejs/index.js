@@ -128,6 +128,10 @@ module.exports = {
     "paddingLeft": "20",
     "paddingRight": "20"
   },
+  "is-ios": {
+    "height": "128",
+    "paddingTop": "40"
+  },
   "navbar-title": {
     "color": "#FFFFFF",
     "fontSize": "32"
@@ -162,6 +166,12 @@ var navigator = weex.requireModule('navigator');
 
 exports.default = {
   name: 'navbar',
+  data: function data() {
+    return {
+      platform: weex.config.env.platform.toLowerCase()
+    };
+  },
+
   props: {
     showBack: {
       type: Boolean,
@@ -195,7 +205,8 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["navbar"]
+    staticClass: ["navbar"],
+    class: [_vm.platform === 'ios' ? 'is-ios' : '']
   }, [(_vm.showBack) ? _c('text', {
     staticClass: ["iconfont", "navbar-icon"],
     on: {
